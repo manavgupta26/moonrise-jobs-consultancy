@@ -145,6 +145,7 @@
   .section-head .eyebrow{margin-bottom:14px;}
   .section-head h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:14px;}
   .section-head p{color:var(--ink-soft);font-size:16px;}
+  .swipe-hint{display:none;}
 
   /* ===== SERVICES ===== */
   .services{background:var(--white);}
@@ -338,8 +339,27 @@
     .hero h1{font-size:clamp(28px,7vw,40px);}
     .hero p.lead{font-size:16px;max-width:100%;}
     .hero-ring{width:420px;height:420px;top:-80px;}
-    .service-grid{grid-template-columns:1fr;}
-    .sector-grid{grid-template-columns:1fr 1fr;}
+    .swipe-hint{
+      display:flex;align-items:center;gap:6px;
+      font-size:12.5px;font-weight:600;color:var(--brown-mid);
+      margin:-32px 0 18px;letter-spacing:0.02em;
+    }
+    .service-grid{
+      display:flex;grid-template-columns:none;
+      overflow-x:auto;scroll-snap-type:x mandatory;
+      gap:16px;margin:0 -24px;padding:4px 24px 14px;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    }
+    .service-grid::-webkit-scrollbar{display:none;}
+    .service-card{flex:0 0 78%;scroll-snap-align:start;}
+    .sector-grid{
+      display:flex;grid-template-columns:none;
+      overflow-x:auto;scroll-snap-type:x mandatory;
+      gap:10px;margin:0 -24px;padding:4px 24px 14px;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    }
+    .sector-grid::-webkit-scrollbar{display:none;}
+    .sector-pill{flex:0 0 auto;white-space:nowrap;scroll-snap-align:start;}
     .why-grid{grid-template-columns:1fr;}
     .why-item{border-right:none;}
     .contact-grid{grid-template-columns:1fr;}
@@ -351,7 +371,8 @@
   @media (max-width:520px){
     .wrap{padding:0 20px;}
     section .wrap{padding-left:20px;padding-right:20px;}
-    .sector-grid{grid-template-columns:1fr;}
+    .service-grid{margin:0 -20px;padding:4px 20px 14px;}
+    .sector-grid{margin:0 -20px;padding:4px 20px 14px;}
     .btn-row{flex-direction:column;align-items:stretch;}
     .btn{justify-content:center;}
     .logo-text .sub{display:none;}
@@ -430,6 +451,7 @@
       <h2>Our core services</h2>
       <p>End-to-end recruitment support, from first search to long-term retention.</p>
     </div>
+    <div class="swipe-hint">Swipe to explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
     <div class="service-grid">
       <div class="service-card">
         <div class="service-num">01 — Hiring</div>
@@ -457,6 +479,7 @@
       <h2>Specialized across sectors</h2>
       <p>Our consultants understand the hiring realities of each industry we work in.</p>
     </div>
+    <div class="swipe-hint">Swipe to explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
     <div class="sector-grid">
       <div class="sector-pill"><span class="dot"></span>Real Estate</div>
       <div class="sector-pill"><span class="dot"></span>Engineering Projects</div>
